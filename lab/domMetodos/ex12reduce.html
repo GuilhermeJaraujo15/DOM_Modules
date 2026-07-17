@@ -140,8 +140,8 @@
 <body>
 
     <header class="lab-header">
-        <h1 class="lab-title">Acumulação de Texto com reduce()</h1>
-        <p>Demonstração de como transformar uma coleção de strings em um valor atômico único.</p>
+        <h1 class="lab-title">Acumulação de Texto/ Números com reduce()</h1>
+        <p>Demonstração de como transformar uma coleção de strings em um valor único.</p>
         <div class="concept-pills">
             <span class="pill">Array.reduce()</span>
             <span class="pill">String Concatenation</span>
@@ -154,9 +154,8 @@
         <section class="demo-card">
             <div class="form-layout">
                 <div>
-                    <!-- IDs matching logic in Source 13, page 224 -->
-                    <label class="label-style" for="num">Palavras para fundir (separadas por vírgula):</label>
-                    <input type="text" id="num" class="input-text" placeholder="Ex: HTML, CSS, JavaScript">
+                    <label class="label-style" for="text">Palavras ou números para fundir (separadas por vírgula):</label>
+                    <input type="text" id="text" class="input-text" placeholder="Ex: HTML, CSS, JavaScript ou 1, 2, 3">
                 </div>
                 <button id="botao" class="btn-execute">Concatenar Lista</button>
             </div>
@@ -172,7 +171,7 @@
 
     <script>
         // chamamento //
-        const input = document.getElementById("num");
+        const input = document.getElementById("text");
         const botao = document.getElementById("botao");
         const p = document.getElementById("p");
 
