@@ -3,142 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>JavaScript Lab | Portfólio</title>
-
+    <title>JS Lab · Anotações</title>
     <link rel="stylesheet" href="stylelab.css">
 </head>
-
 <body>
-
-<header class="hero">
 
     <div class="container">
 
-        <span class="tag">Laboratório</span>
+        <!-- Cabeçalho simples, sem firulas -->
+        <header class="header">
+            <h1>📁 JavaScript Lab</h1>
+            <p>
+                Repositório pessoal de pequenos experimentos e exercícios práticos.
+                Cada card aponta para uma implementação isolada.
+            </p>
+            <hr>
+        </header>
 
-        <h1>JavaScript Lab</h1>
+        <!-- Seção DOM -->
+        <section>
+            <h2>Manipulação do DOM</h2>
+            <div class="cards">
+                <a href="./lab/dom/ex1.html" class="card">
+                    <h3>Exercício 01</h3>
+                    <p>Saudação Personalizada</p>
+                    <span class="link-hint">Abrir →</span>
+                </a>
+                <a href="./lab/dom/ex2.html" class="card">
+                    <h3>Exercício 02</h3>
+                    <p>Alteração de Estilos Dinâmicos</p>
+                    <span class="link-hint">Abrir →</span>
+                </a>
+                <a href="./lab/dom/ex3.html" class="card">
+                    <h3>Exercício 03</h3>
+                    <p>Criação de novos elementos com <code>createElement()</code></p>
+                    <span class="link-hint">Abrir →</span>
+                </a>
+                <a href="./lab/dom/ex4.html" class="card">
+                    <h3>Exercício 04</h3>
+                    <p>Atualização em Massa com <code>querySelectorAll</code></p>
+                    <span class="link-hint">Abrir →</span>
+                </a>
+            </div>
+        </section>
 
-        <p>
-            Este laboratório reúne demonstrações práticas desenvolvidas durante meus estudos
-            em JavaScript. Cada exemplo apresenta um conceito específico acompanhado
-            de uma implementação funcional, permitindo visualizar na prática o
-            comportamento do código e sua interação com a interface.
-        </p>
+        <!-- Seção Métodos de Array -->
+        <section>
+            <h2>Métodos de Arrays</h2>
+            <div class="cards">
+                <a href="./lab/domMetodos/ex1filter.html" class="card">
+                    <h3>filter()</h3>
+                    <p>Filtrando elementos com base em uma condição.</p>
+                    <span class="link-hint">Abrir →</span>
+                </a>
+                <a href="./lab/domMetodos/ex3find.html" class="card">
+                    <h3>find()</h3>
+                    <p>Localizando o primeiro elemento que satisfaz uma condição.</p>
+                    <span class="link-hint">Abrir →</span>
+                </a>
+                <a href="./lab/domMetodos/ex5forEach.html" class="card">
+                    <h3>forEach()</h3>
+                    <p>Percorrendo elementos de uma coleção.</p>
+                    <span class="link-hint">Abrir →</span>
+                </a>
+                <a href="./lab/domMetodos/ex7reduce.html" class="card">
+                    <h3>reduce()</h3>
+                    <p>Acumulando valores para produzir um único resultado.</p>
+                    <span class="link-hint">Abrir →</span>
+                </a>
+            </div>
+        </section>
 
-    </div>
-
-</header>
-
-<main class="container">
-
-<section>
-
-    <h2>Manipulação do DOM</h2>
-
-    <div class="cards">
-
-        <a href="./lab/dom/ex1.html" class="card">
-
-            <h3>Exercício 01</h3>
-
-            <p>Saudação Personalizada</p>
-
-            <span>Abrir demonstração →</span>
-
-        </a>
-
-        <a href="./lab/dom/ex2.html" class="card">
-
-            <h3>Exercício 02</h3>
-
-            <p>Alteração de Estilos Dinâmicos</p>
-
-            <span>Abrir demonstração →</span>
-
-        </a>
-
-        <a href="./lab/dom/ex3.html" class="card">
-
-            <h3>Exercício 03</h3>
-
-            <p>Criação de novos elementos com createElement().</p>
-
-            <span>Abrir demonstração →</span>
-
-        </a>
-
-        <a href="./lab/dom/ex4.html" class="card">
-
-            <h3>Exercício 04</h3>
-
-            <p>Atualização em Massa com querySelectorAll</p>
-
-            <span>Abrir demonstração →</span>
-
-        </a>
-
-    </div>
-
-</section>
-
-<section>
-
-    <h2>Métodos de Arrays</h2>
-
-    <div class="cards">
-
-        <a href="./lab/domMetodos/ex1filter.html" class="card">
-
-            <h3>filter()</h3>
-
-            <p></p>
-
-            <span>Abrir demonstração →</span>
-
-        </a>
-
-        <a href="./lab/domMetodos/ex3find.html" class="card">
-
-            <h3>find()</h3>
-
-            <p>Localizando o primeiro elemento que satisfaz uma condição.</p>
-
-            <span>Abrir demonstração →</span>
-
-        </a>
-
-        <a href="./lab/domMetodos/ex5forEach.html" class="card">
-
-            <h3>forEach()</h3>
-
-            <p>Percorrendo elementos de uma coleção.</p>
-
-            <span>Abrir demonstração →</span>
-
-        </a>
-
-        <a href="./lab/domMetodos/ex7reduce.html" class="card">
-
-            <h3>reduce()</h3>
-
-            <p>Acumulando valores para produzir um único resultado.</p>
-
-            <span>Abrir demonstração →</span>
-
-        </a>
+        <!-- Rodapé minimalista -->
+        <footer>
+            <hr>
+            <p>Feito para guardar meus projetos · Portfólio pessoal</p>
+        </footer>
 
     </div>
-
-</section>
-
-</main>
-
-<footer>
-
-    Desenvolvido como material complementar do meu Portfólio de Desenvolvimento Web.
-
-</footer>
 
 </body>
 </html>
