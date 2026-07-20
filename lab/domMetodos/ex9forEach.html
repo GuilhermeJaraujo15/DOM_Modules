@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 3 forEach - JavaScript Lab</title>
     <style>
-
         :root {
             --font-main: "Inter", system-ui, -apple-system, sans-serif;
             --color-bg: #ffffff;
@@ -29,7 +31,6 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
 
         .lab-header {
             border-bottom: 1px solid var(--color-border);
@@ -59,7 +60,6 @@
             font-size: 0.8rem;
             color: #475467;
         }
-
 
         .demo-sandbox {
             border: 1px solid var(--color-border);
@@ -102,7 +102,6 @@
 
         .btn-action:hover { filter: brightness(1.1); }
 
-
         .result-panel {
             margin-top: 2rem;
             padding: 1.25rem;
@@ -111,7 +110,6 @@
             border-radius: 0 var(--radius) var(--radius) 0;
             min-height: 60px;
         }
-
 
         #p {
             font-weight: 500;
@@ -127,15 +125,13 @@
             background: var(--color-secondary-bg);
             border-radius: var(--radius);
         }
-    
-
-</style>
+    </style>
 </head>
 <body>
-
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="lab-header">
-        <h1 class="lab-title">Validação de Lote com forEach()</h1>
-        <p>Processamento de coleções e aplicação de lógica condicional para feedback de status.</p>
+        <h1 class="lab-title" data-i18n="exercises.forEach3.title">Validação de Lote com forEach()</h1>
+        <p data-i18n="exercises.forEach3.description">Processamento de coleções e aplicação de lógica condicional para feedback de status.</p>
         <div class="concept-tags">
             <span class="tag">Array.forEach()</span>
             <span class="tag">Conditional (if/else)</span>
@@ -147,40 +143,36 @@
     <main>
         <section class="demo-sandbox">
             <div class="input-group">
-
                 <div>
-                    <label class="input-label" for="num">Notas dos alunos (separadas por vírgula):</label>
-                    <input type="text" id="num" class="input-field" placeholder="Ex: 8.5, 4, 10, 6.5, 7">
+                    <label class="input-label" for="num" data-i18n="exercises.forEach3.label">Notas dos alunos (separadas por vírgula):</label>
+                    <input type="text" id="num" class="input-field" data-i18n-placeholder="exercises.forEach3.placeholder" placeholder="Ex: 8.5, 4, 10, 6.5, 7">
                 </div>
-                <button id="botao" class="btn-action">Verificar Status</button>
+                <button id="botao" class="btn-action" data-i18n="exercises.forEach3.button">Verificar Status</button>
             </div>
 
             <div class="result-panel" aria-live="polite">
-                <p id="p">Aguardando entrada de dados...</p>
+                <p id="p" data-i18n="exercises.forEach3.resultInitial">Aguardando entrada de dados...</p>
             </div>
         </section>
-
     </main>
 
-
+    <script src="../../i18n.js"></script>
     <script>
-        // chamamento //
         const input = document.getElementById("num");
         const botao = document.getElementById("botao");
         const p = document.getElementById("p");
 
-        // interação //
-        botao.addEventListener("click", function () {   
+        botao.addEventListener("click", function () {
             const dadosInput = input.value.split(",").map((d) => Number(d.trim()));
             let vazio = "";
-            dadosInput.forEach((f) => {     
+            dadosInput.forEach((f) => {
                 if (f >= 7) {
-                    vazio += ` Aprovado.`;     
+                    vazio += t("exercises.forEach3.approved");
                 } else {
-                    vazio += ` Reprovado.`;     
+                    vazio += t("exercises.forEach3.failed");
                 }
             });
-            p.textContent = `${vazio}`; 
+            p.textContent = `${vazio}`;
         });
     </script>
 </body>

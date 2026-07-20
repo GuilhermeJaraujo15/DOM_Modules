@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 3 Filter - JavaScript Lab</title>
     <style>
       :root {
@@ -128,13 +131,13 @@
         border-radius: var(--radius);
         font-size: 0.9rem;
       }
-    
-</style>
+    </style>
   </head>
   <body>
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="lab-header">
-      <h1 class="lab-title">Filtro de Divisibilidade</h1>
-      <p>
+      <h1 class="lab-title" data-i18n="exercises.filter3.title">Filtro de Divisibilidade</h1>
+      <p data-i18n="exercises.filter3.description">
         Utilização do método <code>filter()</code> para identificação de
         múltiplos matemáticos.
       </p>
@@ -148,42 +151,35 @@
     <main>
       <section class="demo-card">
         <div class="input-group">
-          <!-- IDs matching the JS logic in exerciciosDomMetodos.pdf [2] -->
-          <label class="label-style" for="valores2"
-            >Digite os números (separados por vírgula):</label
-          >
+          <label class="label-style" for="valores2" data-i18n="exercises.filter3.label">Digite os números (separados por vírgula):</label>
           <input
             type="text"
             id="valores2"
             class="input-field"
+            data-i18n-placeholder="exercises.filter3.placeholder"
             placeholder="Ex: 3, 5, 9, 12, 14, 21"
           />
-          <button id="botao3" class="btn-primary">
-            Filtrar Múltiplos de 3
-          </button>
+          <button id="botao3" class="btn-primary" data-i18n="exercises.filter3.button">Filtrar Múltiplos de 3</button>
         </div>
 
         <div class="result-area" aria-live="polite">
-          <p id="p3">Aguardando entrada de dados...</p>
+          <p id="p3" data-i18n="exercises.filter3.resultInitial">Aguardando entrada de dados...</p>
         </div>
       </section>
-
-
     </main>
 
+    <script src="../../i18n.js"></script>
     <script>
-      // chamamento //
       const input2 = document.getElementById("valores2");
       const botao3 = document.getElementById("botao3");
       const p3 = document.getElementById("p3");
 
-      // interação //
       botao3.addEventListener("click", function () {
         const dadosInput = input2.value.split(",").map(Number);
         const analiseDosDadosdois = dadosInput.filter(
           (dadosInputdois) => dadosInputdois % 3 === 0,
         );
-        p3.textContent = `O(s) número(s) múltiplo(s) de três, é(são): ${analiseDosDadosdois.join(", ")}.`;
+        p3.textContent = t("exercises.filter3.resultMessage", { values: analiseDosDadosdois.join(", ") });
       });
     </script>
   </body>

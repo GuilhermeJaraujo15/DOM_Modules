@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 2 Reduce - JavaScript Lab</title>
     <style>
-
         :root {
             --font-main: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             --color-bg: #ffffff;
@@ -27,7 +29,6 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
 
         .lab-header {
             border-bottom: 1px solid var(--color-border);
@@ -58,7 +59,6 @@
             font-size: 0.8rem;
             color: #475467;
         }
-
 
         .demo-card {
             border: 1px solid var(--color-border);
@@ -110,7 +110,6 @@
 
         .btn-execute:hover { background-color: #0860ca; }
 
-
         .result-panel {
             margin-top: 2rem;
             padding: 1.25rem;
@@ -119,7 +118,6 @@
             border-radius: 0 var(--radius) var(--radius) 0;
             min-height: 60px;
         }
-
 
         #p {
             font-weight: 500;
@@ -134,15 +132,13 @@
             background: var(--color-secondary-bg);
             border-radius: var(--radius);
         }
-    
-
-</style>
+    </style>
 </head>
 <body>
-
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="lab-header">
-        <h1 class="lab-title">Produto Acumulado com reduce()</h1>
-        <p>Utilização de funções de redução para operações matemáticas em coleções numéricas.</p>
+        <h1 class="lab-title" data-i18n="exercises.reduce2.title">Produto Acumulado com reduce()</h1>
+        <p data-i18n="exercises.reduce2.description">Utilização de funções de redução para operações matemáticas em coleções numéricas.</p>
         <div class="concept-tags">
             <span class="tag">Array.reduce()</span>
             <span class="tag">Accumulator</span>
@@ -155,32 +151,28 @@
         <section class="demo-card">
             <div class="form-layout">
                 <div>
-
-                    <label class="label-style" for="num">Insira uma lista de números (por vírgula):</label>
-                    <input type="text" id="num" class="input-control" placeholder="Ex: 2, 5, 10">
+                    <label class="label-style" for="num" data-i18n="exercises.reduce2.label">Insira uma lista de números (por vírgula):</label>
+                    <input type="text" id="num" class="input-control" data-i18n-placeholder="exercises.reduce2.placeholder" placeholder="Ex: 2, 5, 10">
                 </div>
-                <button id="botao" class="btn-execute">Calcular Multiplicação</button>
+                <button id="botao" class="btn-execute" data-i18n="exercises.reduce2.button">Calcular Multiplicação</button>
             </div>
 
             <div class="result-panel" aria-live="polite">
-                <p id="p">Aguardando entrada de dados...</p>
+                <p id="p" data-i18n="exercises.reduce2.resultInitial">Aguardando entrada de dados...</p>
             </div>
         </section>
-
     </main>
 
-
+    <script src="../../i18n.js"></script>
     <script>
-        // chamamento //
         const input = document.getElementById("num");
         const botao = document.getElementById("botao");
         const p = document.getElementById("p");
 
-        // interação //
-        botao.addEventListener("click", function () {   
+        botao.addEventListener("click", function () {
             const dadosInput = input.value.split(",").map((d) => Number(d.trim()));
             const calculoProduto = dadosInput.reduce((a, b) => a * b, 1);
-            p.textContent = `A multiplicação dos números postos, é: ${calculoProduto}.`; 
+            p.textContent = t("exercises.reduce2.resultMessage", { value: calculoProduto });
         });
     </script>
 </body>

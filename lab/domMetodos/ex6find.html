@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 3 Find - JavaScript Lab</title>
     <style>
-
         :root {
             --font-main: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             --color-bg: #ffffff;
@@ -28,7 +30,6 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
 
         .lab-header {
             border-bottom: 1px solid var(--color-border);
@@ -58,7 +59,6 @@
             font-size: 0.8rem;
             color: #475467;
         }
-
 
         .demo-sandbox {
             border: 1px solid var(--color-border);
@@ -130,15 +130,13 @@
             background: var(--color-code-bg);
             border-radius: var(--radius);
         }
-    
-
-</style>
+    </style>
 </head>
 <body>
-
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="lab-header">
-        <h1 class="lab-title">Busca de Substrings com find()</h1>
-        <p>Filtragem atômica de strings baseada na presença de caracteres específicos.</p>
+        <h1 class="lab-title" data-i18n="exercises.find3.title">Busca de Substrings com find()</h1>
+        <p data-i18n="exercises.find3.description">Filtragem atômica de strings baseada na presença de caracteres específicos.</p>
         <div class="concept-pills">
             <span class="pill">Array.find()</span>
             <span class="pill">String.includes()</span>
@@ -151,38 +149,33 @@
         <section class="demo-sandbox">
             <div class="form-layout">
                 <div>
-
-                    <label class="input-label" for="num">Insira palavras (separadas por vírgula):</label>
-                    <input type="text" id="num" class="input-control" placeholder="Ex: Casa, Azeitona, Zebra, Carro">
+                    <label class="input-label" for="num" data-i18n="exercises.find3.label">Insira palavras (separadas por vírgula):</label>
+                    <input type="text" id="num" class="input-control" data-i18n-placeholder="exercises.find3.placeholder" placeholder="Ex: Casa, Azeitona, Zebra, Carro">
                 </div>
-                <button id="botao" class="btn-submit">Localizar palavra com 'z'</button>
+                <button id="botao" class="btn-submit" data-i18n="exercises.find3.button">Localizar palavra com 'z'</button>
             </div>
 
             <div class="output-box" aria-live="polite">
-                <p id="p">Aguardando entrada de dados...</p>
+                <p id="p" data-i18n="exercises.find3.resultInitial">Aguardando entrada de dados...</p>
             </div>
         </section>
-
-
     </main>
 
-
+    <script src="../../i18n.js"></script>
     <script>
-        // chamamento //
         const input = document.getElementById("num");
         const botao = document.getElementById("botao");
         const p = document.getElementById("p");
 
-        // interação //
-        botao.addEventListener("click", function () {   
+        botao.addEventListener("click", function () {
             const nomeInput = input.value.split(",").map((i) => i.trim().toLowerCase());
             const analiseInput = nomeInput.find((d) => d.includes("z"));
             
-            if (analiseInput != undefined) {     
-                p.textContent = `A primeira palavra com "z", é: ${analiseInput}.`; 
-            } else {     
-                p.textContent = `Não há a letra "z" nas palavras postas.`; 
-            } 
+            if (analiseInput != undefined) {
+                p.textContent = t("exercises.find3.foundResult", { value: analiseInput });
+            } else {
+                p.textContent = t("exercises.find3.noValueResult");
+            }
         });
     </script>
 </body>

@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 2 Filter - JavaScript Lab</title>
     <style>
       :root {
@@ -123,13 +126,13 @@
         font-weight: 500;
         color: #053d7a;
       }
-
-</style>
+    </style>
   </head>
   <body>
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="lab-header">
-      <h1 class="lab-title">Processamento Numérico com filter()</h1>
-      <p>
+      <h1 class="lab-title" data-i18n="exercises.filter2.title">Processamento Numérico com filter()</h1>
+      <p data-i18n="exercises.filter2.description">
         Conversão de tipos e aplicação de filtros lógicos em arrays numéricos.
       </p>
       <div class="concept-group">
@@ -143,38 +146,33 @@
     <main>
       <section class="demo-container">
         <div class="input-stack">
-          <label class="input-label" for="valores"
-            >Insira números (separados por vírgula):</label
-          >
+          <label class="input-label" for="valores" data-i18n="exercises.filter2.label">Insira números (separados por vírgula):</label>
           <input
             type="text"
             id="valores"
             class="input-text"
+            data-i18n-placeholder="exercises.filter2.placeholder"
             placeholder="Ex: 5, 8.5, 10, 6, 7"
           />
-          <button id="botao2" class="btn-submit">Filtrar Valores (>= 7)</button>
+          <button id="botao2" class="btn-submit" data-i18n="exercises.filter2.button">Filtrar Valores (>= 7)</button>
         </div>
 
         <div class="result-box" aria-live="polite">
-          <p id="p2">Aguardando entrada de dados...</p>
+          <p id="p2" data-i18n="exercises.filter2.resultInitial">Aguardando entrada de dados...</p>
         </div>
       </section>
-
     </main>
 
+    <script src="../../i18n.js"></script>
     <script>
-      // chamamento //
       const input1 = document.getElementById("valores");
       const botao2 = document.getElementById("botao2");
       const p2 = document.getElementById("p2");
 
-      // interação //
       botao2.addEventListener("click", function () {
         const pegarDados = input1.value.split(",").map(Number);
         const analiseDosDados = pegarDados.filter((numeros) => numeros >= 7);
-
-        // Correção técnica: p2.textContent em vez de p.textContent para evitar erro de referência
-        p2.textContent = `O(s) número(s) maior(es) ou igual(is) a sete, é(são): ${analiseDosDados.join(", ")}`;
+        p2.textContent = t("exercises.filter2.resultMessage", { values: analiseDosDados.join(", ") });
       });
     </script>
   </body>

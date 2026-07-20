@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 1 - DOM Lab</title>
     <style>
       :root {
@@ -112,13 +115,11 @@
         min-height: 1.6em;
       }
 
-      /* Accessibility: focus styles [13] */
       .input-text:focus,
       .btn-primary:focus {
         outline: 2px solid var(--color-accent);
         outline-offset: 2px;
       }
-      
 
       .doc-meta {
         margin-top: 2rem;
@@ -127,14 +128,13 @@
         border-radius: var(--radius);
         font-size: 0.9rem;
       }
-    
-
-</style>
+    </style>
   </head>
   <body>
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="lab-header">
-      <h1 class="lab-title">Saudação Dinâmica com textContent</h1>
-      <p class="lab-description">
+      <h1 class="lab-title" data-i18n="exercises.dom1.title">Saudação Dinâmica com textContent</h1>
+      <p class="lab-description" data-i18n="exercises.dom1.description">
         Transformação de input do usuário em feedback visual imediato.
       </p>
       <ul class="concept-list">
@@ -147,37 +147,34 @@
 
     <main>
       <section class="lab-section">
-        <h2 style="font-size: 1.2rem; margin-bottom: 1rem">Demonstração</h2>
+        <h2 style="font-size: 1.2rem; margin-bottom: 1rem" data-i18n="exercises.dom1.demoTitle">Demonstração</h2>
         <div class="demo-container">
           <div class="form-group">
-            <label for="input">Digite seu nome:</label>
+            <label for="input" data-i18n="exercises.dom1.label">Digite seu nome:</label>
             <input
               type="text"
               id="input"
               class="input-text"
+              data-i18n-placeholder="exercises.dom1.placeholder"
               placeholder="Ex: Guilherme"
             />
-            <button id="botao" class="btn-primary">Enviar Saudação</button>
+            <button id="botao" class="btn-primary" data-i18n="exercises.dom1.button">Enviar Saudação</button>
           </div>
           <p id="result" aria-live="polite"></p>
         </div>
       </section>
     </main>
 
-
-
+    <script src="../../i18n.js"></script>
     <script>
-      const titulo1 = document.getElementById("titulo");
       const input1 = document.getElementById("input");
       const botao1 = document.getElementById("botao");
       const resultado = document.getElementById("result");
 
       botao1.addEventListener("click", function () {
-        const valorObtido = document.getElementById("input").value;
-
-        resultado.textContent = `Olá, ${valorObtido}, Seja bem-vindo!`;
+        const valorObtido = input1.value.trim();
+        resultado.textContent = t("exercises.dom1.resultMessage", { name: valorObtido || "friend" });
         resultado.style.color = "blue";
-        resultado.appendChild("p");
       });
     </script>
   </body>

@@ -3,135 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>JS Lab · Arquivos</title>
     <link rel="stylesheet" href="stylelab.css?v=2">
 </head>
 <body>
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
 
     <div class="container">
-
-
         <header class="header">
-            <h1>📁 JavaScript Lab</h1>
-            <p>
+            <h1 data-i18n="home.title">📁 JavaScript Lab</h1>
+            <p data-i18n="home.subtitle">
                 Repositório pessoal de pequenos experimentos práticos.
                 Cada card aponta para uma implementação isolada.
             </p>
             <hr>
         </header>
 
-
         <section>
-            <h2>Manipulação do DOM</h2>
+            <h2 data-i18n="home.domSectionTitle">Manipulação do DOM</h2>
             <div class="cards">
                 <a href="./lab/dom/ex1.html" target="_blank" class="card">
-                    <h3>Exercício 01</h3>
-                    <p>(Saudação Personalizada.)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.dom.ex1.title">Exercício 01</h3>
+                    <p data-i18n="home.cards.dom.ex1.description">(Saudação Personalizada.)</p>
+                    <span class="link-hint" data-i18n="home.cards.dom.ex1.hint">Abrir →</span>
                 </a>
                 <a href="./lab/dom/ex2.html" target="_blank" class="card">
-                    <h3>Exercício 02</h3>
-                    <p>(Alteração de Estilos Dinâmicos.)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.dom.ex2.title">Exercício 02</h3>
+                    <p data-i18n="home.cards.dom.ex2.description">(Alteração de Estilos Dinâmicos.)</p>
+                    <span class="link-hint" data-i18n="home.cards.dom.ex2.hint">Abrir →</span>
                 </a>
                 <a href="./lab/dom/ex3.html" target="_blank" class="card">
-                    <h3>Exercício 03</h3>
-                    <p>(Criação de novos elementos.)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.dom.ex3.title">Exercício 03</h3>
+                    <p data-i18n="home.cards.dom.ex3.description">(Criação de novos elementos.)</p>
+                    <span class="link-hint" data-i18n="home.cards.dom.ex3.hint">Abrir →</span>
                 </a>
                 <a href="./lab/dom/ex4.html" target="_blank" class="card">
-                    <h3>Exercício 04</h3>
-                    <p>(Atualização em Massa.)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.dom.ex4.title">Exercício 04</h3>
+                    <p data-i18n="home.cards.dom.ex4.description">(Atualização em Massa.)</p>
+                    <span class="link-hint" data-i18n="home.cards.dom.ex4.hint">Abrir →</span>
                 </a>
             </div>
         </section>
 
-        <!-- Seção Métodos de Array -->
         <section>
-            <h2>Métodos Aplicados a DOM</h2>
+            <h2 data-i18n="home.methodsSectionTitle">Métodos Aplicados a DOM</h2>
             <div class="cards">
                 <a href="./lab/domMetodos/ex1filter.html" target="_blank" class="card">
-                    <h3> 1 - filter()</h3>
-                    <p>(Nomes com 'A')</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex1.title">1 - filter()</h3>
+                    <p data-i18n="home.cards.methods.ex1.description">(Nomes com 'A')</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex1.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex2filter.html" target="_blank" class="card">
-                    <h3> 2 - filter()</h3>
-                    <p>(Números correspondentes)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex2.title">2 - filter()</h3>
+                    <p data-i18n="home.cards.methods.ex2.description">(Números correspondentes)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex2.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex3filter.html" target="_blank" class="card">
-                    <h3> 3 - filter()</h3>
-                    <p>(Múltiplos de 3)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex3.title">3 - filter()</h3>
+                    <p data-i18n="home.cards.methods.ex3.description">(Múltiplos de 3)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex3.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex4find.html" target="_blank" class="card">
-                    <h3> 1 - find()</h3>
-                    <p>(Primeiro Negativo)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex4.title">1 - find()</h3>
+                    <p data-i18n="home.cards.methods.ex4.description">(Primeiro Negativo)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex4.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex5find.html" target="_blank" class="card">
-                    <h3> 2 - find()</h3>
-                    <p>(Valor > 100)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex5.title">2 - find()</h3>
+                    <p data-i18n="home.cards.methods.ex5.description">(Valor > 100)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex5.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex6find.html" target="_blank" class="card">
-                    <h3> 3 - find()</h3>
-                    <p>(Padrão de Texto 'z')</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex6.title">3 - find()</h3>
+                    <p data-i18n="home.cards.methods.ex6.description">(Padrão de Texto 'z')</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex6.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex7forEach.html" target="_blank" class="card">
-                    <h3> 1 - forEach()</h3>
-                    <p>(Lista de Interesses)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex7.title">1 - forEach()</h3>
+                    <p data-i18n="home.cards.methods.ex7.description">(Lista de Interesses)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex7.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex8forEach.html" target="_blank" class="card">
-                    <h3> 2 - forEach()</h3>
-                    <p>(Aplicação de Desconto)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex8.title">2 - forEach()</h3>
+                    <p data-i18n="home.cards.methods.ex8.description">(Aplicação de Desconto)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex8.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex9forEach.html" target="_blank" class="card">
-                    <h3> 3 - forEach()</h3>
-                    <p>(Status de Aprovação)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex9.title">3 - forEach()</h3>
+                    <p data-i18n="home.cards.methods.ex9.description">(Status de Aprovação)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex9.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex10reduce.html" target="_blank" class="card">
-                    <h3> 1 - reduce()</h3>
-                    <p>(Cálculo de Média)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex10.title">1 - reduce()</h3>
+                    <p data-i18n="home.cards.methods.ex10.description">(Cálculo de Média)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex10.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex11reduce.html" target="_blank" class="card">
-                    <h3> 2 - reduce()</h3>
-                    <p>(Produto de Valores)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex11.title">2 - reduce()</h3>
+                    <p data-i18n="home.cards.methods.ex11.description">(Produto de Valores)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex11.hint">Abrir →</span>
                 </a>
 
                 <a href="./lab/domMetodos/ex12reduce.html" target="_blank" class="card">
-                    <h3> 3 - reduce()</h3>
-                    <p>(Fusão de Strings)</p>
-                    <span class="link-hint">Abrir →</span>
+                    <h3 data-i18n="home.cards.methods.ex12.title">3 - reduce()</h3>
+                    <p data-i18n="home.cards.methods.ex12.description">(Fusão de Strings)</p>
+                    <span class="link-hint" data-i18n="home.cards.methods.ex12.hint">Abrir →</span>
                 </a>
             </div>
         </section>
 
-        <!-- Rodapé minimalista -->
         <footer>
             <hr>
-            <p>Feito para guardar meus projetos · Portfólio Expositivo</p>
+            <p data-i18n="home.footerText">Feito para guardar meus projetos · Portfólio Expositivo</p>
         </footer>
-
     </div>
 
+    <script src="./i18n.js"></script>
 </body>
 </html>

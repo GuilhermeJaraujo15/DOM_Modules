@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 1 Filter - JavaScript Lab</title>
     <style>
       :root {
@@ -115,9 +118,10 @@
     </style>
   </head>
   <body>
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="doc-header">
-      <h1>Filtragem de Coleções: Array.filter()</h1>
-      <p>
+      <h1 data-i18n="exercises.filter1.title">Filtragem de Coleções: Array.filter()</h1>
+      <p data-i18n="exercises.filter1.description">
         Demonstração técnica de processamento e filtragem seletiva de arrays.
       </p>
       <div style="margin-top: 10px">
@@ -131,38 +135,36 @@
     <main>
       <section class="demo-area">
         <div class="input-group">
-          <label class="label-text" for="nomes"
-            >Insira nomes separados por vírgula:</label
-          >
+          <label class="label-text" for="nomes" data-i18n="exercises.filter1.label">Insira nomes separados por vírgula:</label>
           <input
             type="text"
             id="nomes"
             class="input-field"
+            data-i18n-placeholder="exercises.filter1.placeholder"
             placeholder="Ex: Alice, Bruno, Amanda, Carlos"
           />
-          <button id="botao1" class="btn-filter">Executar Filtragem</button>
+          <button id="botao1" class="btn-filter" data-i18n="exercises.filter1.button">Executar Filtragem</button>
         </div>
 
         <div class="result-container" role="status" aria-live="polite">
-          <p id="p">Aguardando interação...</p>
+          <p id="p" data-i18n="exercises.filter1.resultInitial">Aguardando interação...</p>
         </div>
       </section>
     </main>
 
+    <script src="../../i18n.js"></script>
     <script>
-      // chamamento //
       const nomes = document.getElementById("nomes");
       const botao1 = document.getElementById("botao1");
       const p1 = document.getElementById("p");
 
-      // interação js //
       botao1.addEventListener("click", function () {
         const valorInput = nomes.value.trim().split(",");
         const minusculo = valorInput.map((item) => item.trim());
         const analise = minusculo.filter(
           (nome) => nome.startsWith("a") || nome.startsWith("A"),
         );
-        p1.textContent = `O(s) nome(s) que começa(m) com 'A', é(são): ${analise.join(", ")}.`;
+        p1.textContent = t("exercises.filter1.resultMessage", { names: analise.join(", ") });
       });
     </script>
   </body>

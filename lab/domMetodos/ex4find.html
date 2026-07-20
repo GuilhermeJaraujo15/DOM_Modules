@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 1 Find - JavaScript Lab</title>
     <style>
-
         :root {
             --font-main: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             --color-bg: #ffffff;
@@ -27,7 +29,6 @@
             max-width: 850px;
             margin: 0 auto;
         }
-
 
         .doc-header {
             border-bottom: 1px solid var(--color-border);
@@ -58,7 +59,6 @@
             font-size: 0.85rem;
             color: #444;
         }
-
 
         .demo-sandbox {
             border: 1px solid var(--color-border);
@@ -129,14 +129,13 @@
             border-radius: var(--radius);
             color: #57606a;
         }
-
-</style>
+    </style>
 </head>
 <body>
-
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="doc-header">
-        <h1 class="doc-title">Busca com find()</h1>
-        <p>Utilização do método <code>Array.prototype.find()</code> para localizar a primeira ocorrência em um conjunto de dados.</p>
+        <h1 class="doc-title" data-i18n="exercises.find1.title">Busca com find()</h1>
+        <p data-i18n="exercises.find1.description">Utilização do método <code>Array.prototype.find()</code> para localizar a primeira ocorrência em um conjunto de dados.</p>
         <div class="concept-tags">
             <span class="tag">find()</span>
             <span class="tag">split()</span>
@@ -148,32 +147,27 @@
     <main>
         <section class="demo-sandbox">
             <div class="input-group">
-                <!-- IDs mapping exactly to the JS logic in the PDF -->
-                <label class="label-text" for="valores3">Insira os números (separados por vírgula):</label>
-                <input type="text" id="valores3" class="input-field" placeholder="Ex: 10, 5, -3, 8, -1">
-                <button id="botao4" class="btn-action">Localizar Primeiro Negativo</button>
+                <label class="label-text" for="valores3" data-i18n="exercises.find1.label">Insira os números (separados por vírgula):</label>
+                <input type="text" id="valores3" class="input-field" data-i18n-placeholder="exercises.find1.placeholder" placeholder="Ex: 10, 5, -3, 8, -1">
+                <button id="botao4" class="btn-action" data-i18n="exercises.find1.button">Localizar Primeiro Negativo</button>
             </div>
 
             <div class="result-display" aria-live="polite">
-                <p id="p4">Aguardando processamento...</p>
+                <p id="p4" data-i18n="exercises.find1.resultInitial">Aguardando processamento...</p>
             </div>
         </section>
-
     </main>
 
-
+    <script src="../../i18n.js"></script>
     <script>
-        // chamamento //
         const input3 = document.getElementById("valores3");
         const botao4 = document.getElementById("botao4");
         const p4 = document.getElementById("p4");
 
-        // interação js //
-        botao4.addEventListener("click", function () {   
+        botao4.addEventListener("click", function () {
             const dadosInputtres = input3.value.split(",").map(Number);
             const analiseDosDadostres = dadosInputtres.find((dado) => dado < 0);
-            
-            p4.textContent = `O número menor do que 0, entre os postos, é: ${analiseDosDadostres}.`; 
+            p4.textContent = t("exercises.find1.resultMessage", { value: analiseDosDadostres });
         });
     </script>
 </body>

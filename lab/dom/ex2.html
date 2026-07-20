@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 2 - DOM Lab</title>
     <style>
       :root {
@@ -79,7 +82,7 @@
         margin-bottom: 2rem;
         padding: 1rem;
         border-radius: 4px;
-        transition: all 0.3s ease; /* Smooth visual feedback */
+        transition: all 0.3s ease;
       }
 
       .btn-action {
@@ -105,13 +108,13 @@
         border-radius: var(--radius);
         font-size: 0.9rem;
       }
-
-</style>
+    </style>
   </head>
   <body>
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="lab-header">
-      <h1 class="lab-title">Alteração de Estilos via DOM</h1>
-      <p>
+      <h1 class="lab-title" data-i18n="exercises.dom2.title">Alteração de Estilos via DOM</h1>
+      <p data-i18n="exercises.dom2.description">
         Manipulação direta de propriedades CSS inline através do objeto
         <code>style</code>.
       </p>
@@ -124,27 +127,25 @@
 
     <main>
       <section class="demo-box">
-        <h2 id="title">Título da Demonstração</h2>
-        <p id="texto">
+        <h2 id="title" data-i18n="exercises.dom2.heading">Título da Demonstração</h2>
+        <p id="texto" data-i18n="exercises.dom2.paragraph">
           Este parágrafo terá seu estilo alterado programaticamente quando o
           botão for acionado. Observe a mudança na cor da fonte e na cor de
           fundo.
         </p>
 
-        <button id="botao" class="btn-action">Alterar Estilos</button>
+        <button id="botao" class="btn-action" data-i18n="exercises.dom2.button">Alterar Estilos</button>
       </section>
     </main>
 
-
+    <script src="../../i18n.js"></script>
     <script>
-      const titulo2 = document.getElementById("title"); //h1//
-      const p = document.getElementById("texto"); //p//
-      const botao2 = document.getElementById("botao"); //button//
+      const p = document.getElementById("texto");
+      const botao2 = document.getElementById("botao");
 
-      //interação dos elementos html com js//
       botao2.addEventListener("click", function () {
-        const mudarCor = (p.style.color = "green");
-        const mudarCorNovamente = (p.style.backgroundColor = "yellow");
+        p.style.color = "green";
+        p.style.backgroundColor = "yellow";
       });
     </script>
   </body>

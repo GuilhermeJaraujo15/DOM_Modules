@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="twitter:description" content="">
     <title>Exercício 2 Find - JavaScript Lab</title>
     <style>
-
         :root {
             --font-main: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
             --color-bg: #ffffff;
@@ -28,7 +30,6 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
 
         .lab-header {
             border-bottom: 1px solid var(--color-border);
@@ -58,7 +59,6 @@
             font-size: 0.8rem;
             color: #475467;
         }
-
 
         .demo-sandbox {
             border: 1px solid var(--color-border);
@@ -118,7 +118,6 @@
             min-height: 50px;
         }
 
-
         #p {
             font-weight: 500;
             color: #24292f;
@@ -132,15 +131,13 @@
             background: var(--color-secondary-bg);
             border-radius: var(--radius);
         }
-    
-
-</style>
+    </style>
 </head>
 <body>
-
+    <button id="language-switcher" type="button" style="position:fixed;top:1rem;right:1rem;z-index:20;background:#0969da;color:#fff;border:1px solid #fff;border-radius:999px;padding:0.6rem 0.9rem;font-weight:700;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);">EN</button>
     <header class="lab-header">
-        <h1 class="lab-title">Busca Condicional com find()</h1>
-        <p>Identificação do primeiro valor acima de um limite e tratamento de resultados nulos.</p>
+        <h1 class="lab-title" data-i18n="exercises.find2.title">Busca Condicional com find()</h1>
+        <p data-i18n="exercises.find2.description">Identificação do primeiro valor acima de um limite e tratamento de resultados nulos.</p>
         <div class="concept-pills">
             <span class="pill">Array.find()</span>
             <span class="pill">Conditional Logic</span>
@@ -153,36 +150,33 @@
         <section class="demo-sandbox">
             <div class="form-layout">
                 <div>
-                    <label class="field-label" for="num">Insira uma lista de números (por vírgula):</label>
-                    <input type="text" id="num" class="text-input" placeholder="Ex: 50, 80, 120, 30">
+                    <label class="field-label" for="num" data-i18n="exercises.find2.label">Insira uma lista de números (por vírgula):</label>
+                    <input type="text" id="num" class="text-input" data-i18n-placeholder="exercises.find2.placeholder" placeholder="Ex: 50, 80, 120, 30">
                 </div>
-                <button id="botao" class="btn-execute">Verificar Valores > 100</button>
+                <button id="botao" class="btn-execute" data-i18n="exercises.find2.button">Verificar Valores > 100</button>
             </div>
 
             <div class="result-panel" aria-live="polite">
-                <p id="p">Aguardando entrada de dados...</p>
+                <p id="p" data-i18n="exercises.find2.resultInitial">Aguardando entrada de dados...</p>
             </div>
         </section>
-
     </main>
 
-
+    <script src="../../i18n.js"></script>
     <script>
-        // chamamento //
         const input = document.getElementById("num");
         const botao = document.getElementById("botao");
         const p = document.getElementById("p");
 
-        // interação //
-        botao.addEventListener("click", function () {   
+        botao.addEventListener("click", function () {
             const dStringPArray = input.value.split(",").map(Number);
             const analiseInput = dStringPArray.find((i) => i > 100);
             
-            if (analiseInput === undefined) {     
-                p.textContent = `Nos números postos, não há maiores do que 100.`;
-            } else {     
-                p.textContent = `O número maior do que cem, é: ${analiseInput}.`;
-            } 
+            if (analiseInput === undefined) {
+                p.textContent = t("exercises.find2.noValueResult");
+            } else {
+                p.textContent = t("exercises.find2.valueResult", { value: analiseInput });
+            }
         });
     </script>
 </body>
