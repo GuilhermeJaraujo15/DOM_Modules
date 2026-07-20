@@ -151,7 +151,7 @@
             <div class="form-layout">
                 <div>
                     <label class="field-label" for="num" data-i18n="exercises.find2.label">Insira uma lista de números (por vírgula):</label>
-                    <input type="text" id="num" class="text-input" data-i18n-placeholder="exercises.find2.placeholder" placeholder="Ex: 50, 80, 120, 30">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="num" class="text-input" data-i18n-placeholder="exercises.find2.placeholder" placeholder="Ex: 50, 80, 120, 30">
                 </div>
                 <button id="botao" class="btn-execute" data-i18n="exercises.find2.button">Verificar Valores > 100</button>
             </div>

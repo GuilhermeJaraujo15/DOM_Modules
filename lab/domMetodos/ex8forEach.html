@@ -152,7 +152,7 @@
             <div class="form-layout">
                 <div>
                     <label class="label-style" for="num" data-i18n="exercises.forEach2.label">Insira os preços (separados por vírgula):</label>
-                    <input type="text" id="num" class="input-text" data-i18n-placeholder="exercises.forEach2.placeholder" placeholder="Ex: 50, 85.50, 120, 300">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="num" class="input-text" data-i18n-placeholder="exercises.forEach2.placeholder" placeholder="Ex: 50, 85.50, 120, 300">
                 </div>
                 <button id="botao" class="btn-submit" data-i18n="exercises.forEach2.button">Aplicar Desconto de R$ 10,00</button>
             </div>

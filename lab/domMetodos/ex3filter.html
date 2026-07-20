@@ -154,6 +154,7 @@
           <label class="label-style" for="valores2" data-i18n="exercises.filter3.label">Digite os números (separados por vírgula):</label>
           <input
             type="text"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
             id="valores2"
             class="input-field"
             data-i18n-placeholder="exercises.filter3.placeholder"

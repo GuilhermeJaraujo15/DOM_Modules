@@ -148,7 +148,7 @@
         <section class="demo-sandbox">
             <div class="input-group">
                 <label class="label-text" for="valores3" data-i18n="exercises.find1.label">Insira os números (separados por vírgula):</label>
-                <input type="text" id="valores3" class="input-field" data-i18n-placeholder="exercises.find1.placeholder" placeholder="Ex: 10, 5, -3, 8, -1">
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="valores3" class="input-field" data-i18n-placeholder="exercises.find1.placeholder" placeholder="Ex: 10, 5, -3, 8, -1">
                 <button id="botao4" class="btn-action" data-i18n="exercises.find1.button">Localizar Primeiro Negativo</button>
             </div>
 

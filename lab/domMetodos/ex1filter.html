@@ -138,6 +138,7 @@
           <label class="label-text" for="nomes" data-i18n="exercises.filter1.label">Insira nomes separados por vírgula:</label>
           <input
             type="text"
+            oninput="this.value = this.value.replace(/[0-9]/g, '')"
             id="nomes"
             class="input-field"
             data-i18n-placeholder="exercises.filter1.placeholder"

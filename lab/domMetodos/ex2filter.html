@@ -149,6 +149,7 @@
           <label class="input-label" for="valores" data-i18n="exercises.filter2.label">Insira números (separados por vírgula):</label>
           <input
             type="text"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
             id="valores"
             class="input-text"
             data-i18n-placeholder="exercises.filter2.placeholder"
