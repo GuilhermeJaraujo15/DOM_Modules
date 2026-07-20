@@ -173,7 +173,9 @@
 
       botao1.addEventListener("click", function () {
         const valorObtido = input1.value.trim();
-        resultado.textContent = t("exercises.dom1.resultMessage", { name: valorObtido || "friend" });
+        resultado.textContent = t("exercises.dom1.resultMessage", {
+          name: valorObtido || t("exercises.dom1.defaultName"),
+        });
         resultado.style.color = "blue";
       });
     </script>

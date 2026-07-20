@@ -47,7 +47,8 @@
           label: "Digite seu nome:",
           placeholder: "Ex: Guilherme",
           button: "Enviar Saudação",
-          resultMessage: "Hello, {name}! Welcome!",
+          defaultName: "amigo",
+          resultMessage: "Olá, {name}! Bem-vindo(a)!",
         },
         dom2: {
           title: "Alteração de Estilos via DOM",
@@ -83,7 +84,7 @@
           placeholder: "Ex: Alice, Bruno, Amanda, Carlos",
           button: "Executar Filtragem",
           resultInitial: "Aguardando interação...",
-          resultMessage: "The name(s) that start with 'A' are: {names}.",
+          resultMessage: "O(s) nome(s) que começam com 'A' são: {names}.",
         },
         filter2: {
           title: "Processamento Numérico com filter()",
@@ -92,7 +93,7 @@
           placeholder: "Ex: 5, 8.5, 10, 6, 7",
           button: "Filtrar Valores (>= 7)",
           resultInitial: "Aguardando entrada de dados...",
-          resultMessage: "The number(s) greater than or equal to seven are: {values}.",
+          resultMessage: "O(s) número(s) maior(es) ou igual(is) a sete são: {values}.",
         },
         filter3: {
           title: "Filtro de Divisibilidade",
@@ -101,7 +102,7 @@
           placeholder: "Ex: 3, 5, 9, 12, 14, 21",
           button: "Filtrar Múltiplos de 3",
           resultInitial: "Aguardando entrada de dados...",
-          resultMessage: "The multiple(s) of three are: {values}.",
+          resultMessage: "O(s) múltiplo(s) de três são: {values}.",
         },
         find1: {
           title: "Busca com find()",
@@ -111,7 +112,7 @@
           placeholder: "Ex: 10, 5, -3, 8, -1",
           button: "Localizar Primeiro Negativo",
           resultInitial: "Aguardando processamento...",
-          resultMessage: "The number less than 0 is: {value}.",
+          resultMessage: "O número menor que 0 é: {value}.",
         },
         find2: {
           title: "Busca Condicional com find()",
@@ -120,8 +121,8 @@
           placeholder: "Ex: 50, 80, 120, 30",
           button: "Verificar Valores > 100",
           resultInitial: "Aguardando entrada de dados...",
-          noValueResult: "There are no values greater than 100 in the numbers provided.",
-          valueResult: "The number greater than 100 is: {value}.",
+          noValueResult: "Não há valores maiores que 100 nos números informados.",
+          valueResult: "O número maior que 100 é: {value}.",
         },
         find3: {
           title: "Busca de Substrings com find()",
@@ -130,8 +131,8 @@
           placeholder: "Ex: Casa, Azeitona, Zebra, Carro",
           button: "Localizar palavra com 'z'",
           resultInitial: "Aguardando entrada de dados...",
-          foundResult: "The first word containing 'z' is: {value}.",
-          noValueResult: "There is no 'z' in the provided words.",
+          foundResult: "A primeira palavra que contém 'z' é: {value}.",
+          noValueResult: "Não há 'z' nas palavras informadas.",
         },
         forEach1: {
           title: "Iteração de Arrays com forEach()",
@@ -140,7 +141,7 @@
           placeholder: "Ex: Programação, Música, Viagens",
           button: "Gerar Frases",
           resultInitial: "Aguardando entrada de dados...",
-          resultMessage: "I like {value}.",
+          resultMessage: "Eu gosto de {value}.",
         },
         forEach2: {
           title: "Processamento de Preços: forEach()",
@@ -149,7 +150,7 @@
           placeholder: "Ex: 50, 85.50, 120, 300",
           button: "Aplicar Desconto de R$ 10,00",
           resultInitial: "Aguardando entrada de dados...",
-          resultMessage: "Price with a $10.00 discount: {value}.",
+          resultMessage: "Preço com desconto de R$ 10,00: {value}.",
         },
         forEach3: {
           title: "Validação de Lote com forEach()",
@@ -158,8 +159,8 @@
           placeholder: "Ex: 8.5, 4, 10, 6.5, 7",
           button: "Verificar Status",
           resultInitial: "Aguardando entrada de dados...",
-          approved: "Approved.",
-          failed: "Failed.",
+          approved: "Aprovado.",
+          failed: "Reprovado.",
         },
         reduce1: {
           title: "Média Aritmética com reduce()",
@@ -168,7 +169,7 @@
           placeholder: "Ex: 10, 15, 20, 25",
           button: "Calcular Média",
           resultInitial: "Aguardando entrada de dados...",
-          resultMessage: "The average of the numbers provided is: {value}.",
+          resultMessage: "A média dos números informados é: {value}.",
         },
         reduce2: {
           title: "Produto Acumulado com reduce()",
@@ -177,7 +178,7 @@
           placeholder: "Ex: 2, 5, 10",
           button: "Calcular Multiplicação",
           resultInitial: "Aguardando entrada de dados...",
-          resultMessage: "The product of the numbers provided is: {value}.",
+          resultMessage: "O produto dos números informados é: {value}.",
         },
         reduce3: {
           title: "Acumulação de Texto / Números com reduce()",
@@ -236,6 +237,7 @@
           label: "Type your name:",
           placeholder: "Example: Guilherme",
           button: "Send Greeting",
+          defaultName: "friend",
           resultMessage: "Hello, {name}! Welcome!",
         },
         dom2: {
