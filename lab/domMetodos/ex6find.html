@@ -150,7 +150,7 @@
             <div class="form-layout">
                 <div>
                     <label class="input-label" for="num" data-i18n="exercises.find3.label">Insira palavras (separadas por vírgula):</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[0-9]/g, '')" id="num" class="input-control" data-i18n-placeholder="exercises.find3.placeholder" placeholder="Ex: Casa, Azeitona, Zebra, Carro">
+                    <input type="text" oninput="this.value = this.value.replace(/[0-9]/g, '')" id="words" class="input-control" data-i18n-placeholder="exercises.find3.placeholder" placeholder="Ex: Casa, Azeitona, Zebra, Carro">
                 </div>
                 <button id="botao" class="btn-submit" data-i18n="exercises.find3.button">Localizar palavra com 'z'</button>
             </div>
@@ -163,7 +163,7 @@
 
     <script src="../../i18n.js"></script>
     <script>
-        const input = document.getElementById("num");
+        const input = document.getElementById("words");
         const botao = document.getElementById("botao");
         const p = document.getElementById("p");
 

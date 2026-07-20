@@ -151,7 +151,7 @@
             <div class="form-group">
                 <div>
                     <label class="label-text" for="num" data-i18n="exercises.forEach1.label">Insira seus interesses (separados por vírgula):</label>
-                    <input type="text" oninput="this.value = this.value.replace(/[0-9]/g, '')" id="num" class="input-control" data-i18n-placeholder="exercises.forEach1.placeholder" placeholder="Ex: Programação, Música, Viagens">
+                    <input type="text" oninput="this.value = this.value.replace(/[0-9]/g, '')" id="words" class="input-control" data-i18n-placeholder="exercises.forEach1.placeholder" placeholder="Ex: Programação, Música, Viagens">
                 </div>
                 <button id="botao" class="btn-execute" data-i18n="exercises.forEach1.button">Gerar Frases</button>
             </div>
@@ -164,7 +164,7 @@
 
     <script src="../../i18n.js"></script>
     <script>
-        const input = document.getElementById("num");
+        const input = document.getElementById("words");
         const botao = document.getElementById("botao");
         const p = document.getElementById("p");
 
