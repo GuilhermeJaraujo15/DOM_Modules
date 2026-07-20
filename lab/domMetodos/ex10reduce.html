@@ -152,7 +152,7 @@
             <div class="input-stack">
                 <div>
                     <label class="label-style" for="num" data-i18n="exercises.reduce1.label">Insira uma lista de números (por vírgula):</label>
-                    <input type="text" id="num" class="input-text" data-i18n-placeholder="exercises.reduce1.placeholder" placeholder="Ex: 10, 15, 20, 25">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="num" class="input-text" data-i18n-placeholder="exercises.reduce1.placeholder" placeholder="Ex: 10, 15, 20, 25">
                 </div>
                 <button id="botao" class="btn-calculate" data-i18n="exercises.reduce1.button">Calcular Média</button>
             </div>

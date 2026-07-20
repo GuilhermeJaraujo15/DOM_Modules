@@ -152,7 +152,7 @@
             <div class="form-layout">
                 <div>
                     <label class="label-style" for="num" data-i18n="exercises.reduce2.label">Insira uma lista de números (por vírgula):</label>
-                    <input type="text" id="num" class="input-control" data-i18n-placeholder="exercises.reduce2.placeholder" placeholder="Ex: 2, 5, 10">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="num" class="input-control" data-i18n-placeholder="exercises.reduce2.placeholder" placeholder="Ex: 2, 5, 10">
                 </div>
                 <button id="botao" class="btn-execute" data-i18n="exercises.reduce2.button">Calcular Multiplicação</button>
             </div>

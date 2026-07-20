@@ -145,7 +145,7 @@
             <div class="input-group">
                 <div>
                     <label class="input-label" for="num" data-i18n="exercises.forEach3.label">Notas dos alunos (separadas por vírgula):</label>
-                    <input type="text" id="num" class="input-field" data-i18n-placeholder="exercises.forEach3.placeholder" placeholder="Ex: 8.5, 4, 10, 6.5, 7">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="num" class="input-field" data-i18n-placeholder="exercises.forEach3.placeholder" placeholder="Ex: 8.5, 4, 10, 6.5, 7">
                 </div>
                 <button id="botao" class="btn-action" data-i18n="exercises.forEach3.button">Verificar Status</button>
             </div>
