@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text: #1e293b;
+    --text-light: #475569;
+    --background: #f8fafc;
+    --card-bg: #ffffff;
+    --border: #cbd5e1;
+    --accent: #b45309;      /* tom terroso/artesanal */
+    --accent-hover: #92400e;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho reto, sem centralização forçada */
+.header {
+    margin-bottom: 2.5rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--text);
+}
+
+.header p {
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    max-width: 650px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 1.5rem 0;
+}
+
+/* Seções */
+section {
+    margin-bottom: 2.5rem;
+}
+
+section h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    color: var(--text);
+    border-left: 4px solid var(--accent);
+    padding-left: 0.75rem;
+}
+
+/* Grid de cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+/* Cards com visual de "bloco de notas" */
+.card {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--border);
+    padding: 1.25rem 1.25rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.card code {
+    background: #eef2f6;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+}
+
+.link-hint {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    transition: margin-left 0.15s ease;
+    display: inline-block;
+}
+
+/* Hover simples: sem animações de "pular" ou sombras */
+.card:hover {
+    background: #ffffff;
+    border-color: #94a3b8;
+    border-left-color: var(--accent-hover);
+}
+
+.card:hover .link-hint {
+    margin-left: 4px;
+    color: var(--accent-hover);
+}
+
+/* Rodapé */
+footer {
+    margin-top: 2rem;
+}
+
+footer p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Ajuste em telas pequenas */
+@media (max-width: 640px) {
+    body {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
