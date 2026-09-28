@@ -1,3 +1,3 @@
 Este é uma página desenvolvida com propósito de arquivar meus exercícios práticos feitos também em meu Curso de Desenvolvimento de Sistemas no SENAI, a fim de expô-los em meu Portfólio Expositivo de forma mais organizada. Escolhi fazer isto depois de deparar-me que não podia mais demonstrar meus exercícios que usavam DOM via CodePen, logo me restara direciona-lo à uma página WEB, escolhendo criar este repositório para uma sadia visualização dos mesmos.
 
-Podes vê-los diretamente no GitHub Pages (https://guilhermejaraujo15.github.io/DOM_Modules/), ou explorando o Potfólio do meu segundo semestre em (https://portexpo.vercel.app/portfolioDois/portfolioDois.html)
+Você pode vê-los diretamente no GitHub Pages: (https://guilhermejaraujo15.github.io/DOM_Modules/), ou explorando o Portfólio do meu segundo semestre: (https://portexpo.vercel.app/portfolioDois/portfolioDois.html)
